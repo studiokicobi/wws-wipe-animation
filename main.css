@@ -1,4 +1,4 @@
-/* Basics
+/* Demo styles
    ------------------------------ */
 * {
   margin: 0;
@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: #fff;
+  background-color: #eeeeea;
   padding: 50px;
 }
 
@@ -14,8 +14,54 @@ li {
   list-style-type: none;
 }
 
+.link {
+  margin: 15rem auto 0 auto;
+  padding: 1.25rem 1.5rem 1rem 1.5rem;
+  border: 0;
+  background-color: #01ade1;
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.link:hover {
+  background-color: black;
+}
+
+#wrapper {
+  padding: 4rem;
+  background-color: #000;
+}
+#wrapper.dark {
+  background-color: #1e1d1d;
+}
+#wrapper.light {
+  background-color: #fff;
+}
+
 /* Logo variables
    ------------------------------ */
+/* Colour filter classes for logos.
+   Add to #brand container to use.
+   The SVGs are #000.
+   Colour filter generator @https://codepen.io/sosuke/pen/Pjoqqp.
+   ------------------------------ */
+.light-filter,
+.light-filter a.light-filter::before,
+.light-filter a.light-filter::after {
+  -webkit-filter: invert(100%) sepia(4%) saturate(544%) hue-rotate(331deg) brightness(117%) contrast(100%);
+          filter: invert(100%) sepia(4%) saturate(544%) hue-rotate(331deg) brightness(117%) contrast(100%);
+}
+
+.dark-filter,
+.dark-filter a::before,
+.dark-filter a::after {
+  -webkit-filter: invert(0%) sepia(2%) saturate(6862%) hue-rotate(17deg) brightness(94%) contrast(77%);
+          filter: invert(0%) sepia(2%) saturate(6862%) hue-rotate(17deg) brightness(94%) contrast(77%);
+}
+
 /* Set up the logo states
    ------------------------------ */
 #brand {
