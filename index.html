@@ -8,13 +8,38 @@
 </head>
 
 <body>
-    <ul class="nav">
-        <li id="brand">
-            <a href="#">work with sian</a>
-        </li>
-    </ul>
+    <div id="wrapper" class="dark">
+        <ul class="nav">
+            <li id="brand" class="light-filter">
+                <a href="#">work with sian</a>
+            </li>
+        </ul>
+    </div>
+
+    <button onclick="lightDark()" class="link">Swap light & dark styles</button>
 
     <script src="main-min.js"></script>
+
+    <script>
+        // Change the light-filter/dark-filter classes on #brand.
+        // Only for this demonstration.
+        function lightDark() {
+            var id = document.getElementById("brand");
+            if (id.className === "light-filter") {
+                id.className = "dark-filter";
+            } else if (id.className === "light-filter reset-brand") {
+                id.className = "dark-filter reset-brand";
+            } else {
+                id.className = "light-filter";
+            }
+            var id2 = document.getElementById("wrapper");
+            if (id2.className === "light") {
+                id2.className = "dark";
+            } else {
+                id2.className = "light";
+            }
+        }
+    </script>
 
 </body>
 
