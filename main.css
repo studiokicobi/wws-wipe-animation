@@ -29,6 +29,9 @@ li {
 .link:hover {
   background-color: black;
 }
+.link:active {
+  background-color: #555;
+}
 
 #wrapper {
   padding: 4rem;

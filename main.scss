@@ -29,6 +29,10 @@ li {
   &:hover {
     background-color: black;
   }
+
+  &:active {
+    background-color: #555;
+  }
 }
 
 #wrapper {
