@@ -107,17 +107,17 @@ li {
 /* Run the mouseover animation
    ------------------------------ */
 #brand.active-brand {
-  -webkit-animation: wipeOut 0.15s 0s 1 steps(20, end) normal both;
-          animation: wipeOut 0.15s 0s 1 steps(20, end) normal both;
+  -webkit-animation: wipeOut 0.1s 0.2s 1 steps(20, end) normal both;
+          animation: wipeOut 0.1s 0.2s 1 steps(20, end) normal both;
 }
 #brand.active-brand a::before {
-  -webkit-animation: secondState 1.5s 0.5s 1 steps(40, end) normal both;
-          animation: secondState 1.5s 0.5s 1 steps(40, end) normal both;
+  -webkit-animation: secondState 1.5s 0.2s 1 steps(40, end) normal both;
+          animation: secondState 1.5s 0.2s 1 steps(40, end) normal both;
   opacity: 1;
 }
 #brand.active-brand a::after {
-  -webkit-animation: thirdState 0.5s 2.25s 1 steps(40, end) normal both;
-          animation: thirdState 0.5s 2.25s 1 steps(40, end) normal both;
+  -webkit-animation: thirdState 0.5s 1.75s 1 steps(40, end) normal both;
+          animation: thirdState 0.5s 1.75s 1 steps(40, end) normal both;
   opacity: 1;
 }
 
@@ -169,7 +169,7 @@ li {
   50% {
     width: 12rem;
   }
-  90% {
+  92% {
     width: 12rem;
   }
   100% {
@@ -183,7 +183,7 @@ li {
   50% {
     width: 12rem;
   }
-  90% {
+  92% {
     width: 12rem;
   }
   100% {

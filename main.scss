@@ -126,17 +126,17 @@ $logo-height: 2rem;
 
 // First logo states wipes out
 #brand.active-brand {
-  animation: wipeOut 0.15s 0s 1 steps(20, end) normal both;
+  animation: wipeOut 0.1s 0.2s 1 steps(20, end) normal both;
 
   // Wipe in logo state 2
   a::before {
-    animation: secondState 1.5s 0.5s 1 steps(40, end) normal both;
+    animation: secondState 1.5s 0.2s 1 steps(40, end) normal both;
     opacity: 1;
   }
 
   // Wipe in logo state 3
   a::after {
-    animation: thirdState 0.5s 2.25s 1 steps(40, end) normal both;
+    animation: thirdState 0.5s 1.75s 1 steps(40, end) normal both;
     opacity: 1;
   }
 }
@@ -175,7 +175,7 @@ $logo-height: 2rem;
   50% {
     width: $logo-width;
   }
-  90% {
+  92% {
     width: $logo-width;
   }
   100% {
