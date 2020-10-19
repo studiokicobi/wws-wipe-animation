@@ -1,0 +1,140 @@
+/* Basics
+   ------------------------------ */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #fff;
+  padding: 50px;
+}
+
+li {
+  list-style-type: none;
+}
+/* Logo variables
+   ------------------------------ */
+$logo-width: 12rem;
+$logo-height: 2rem;
+
+/* Set up the logo states
+   ------------------------------ */
+#brand {
+  // Create the initial logo state
+  position: relative;
+  width: $logo-width;
+  height: $logo-height;
+  background-image: url("svg/logo-header-1.svg");
+  background-size: $logo-width $logo-height;
+  background-repeat: no-repeat;
+
+  a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    text-indent: -9999px;
+    overflow: hidden;
+    width: $logo-width;
+    height: $logo-height;
+  }
+
+  a::before,
+  a::after {
+    // Set up the second & third logo states
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: $logo-width;
+    height: $logo-height;
+    background-size: $logo-width $logo-height;
+    background-repeat: no-repeat;
+    opacity: 0; // Hide this until the animation begins
+    transition: opacity 0s; // Make visible immediately on mouseover
+  }
+
+  a::before {
+    // Create the logo's second state
+    background-image: url("svg/logo-header-2.svg");
+  }
+
+  a::after {
+    // Create the logo's third state
+    background-image: url("svg/logo-header-3.svg");
+  }
+}
+
+/* Run the mouseover animation
+   ------------------------------ */
+
+// First logo states wipes out
+#brand.active-brand {
+  animation: wipeOut 0.15s 0s 1 steps(20, end) normal both;
+
+  // Wipe in logo state 2
+  a::before {
+    animation: secondState 1.5s 0.5s 1 steps(40, end) normal both;
+    opacity: 1;
+  }
+
+  // Wipe in logo state 3
+  a::after {
+    animation: thirdState 0.5s 2.25s 1 steps(40, end) normal both;
+    opacity: 1;
+  }
+}
+
+/* Run the mouseout animation: wipe in the default logo.
+   ------------------------------ */
+#brand.reset-brand {
+  animation: wipeIn 0.4s 0s 1 steps(20, end) normal both;
+}
+
+/* Keyframes
+   ------------------------------ */
+
+@keyframes wipeIn {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: $logo-width;
+  }
+}
+
+@keyframes wipeOut {
+  0% {
+    width: $logo-width;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes secondState {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: $logo-width;
+  }
+  90% {
+    width: $logo-width;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes thirdState {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: $logo-width;
+  }
+}

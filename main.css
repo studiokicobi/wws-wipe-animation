@@ -1,0 +1,162 @@
+/* Basics
+   ------------------------------ */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #fff;
+  padding: 50px;
+}
+
+li {
+  list-style-type: none;
+}
+
+/* Logo variables
+   ------------------------------ */
+/* Set up the logo states
+   ------------------------------ */
+#brand {
+  position: relative;
+  width: 12rem;
+  height: 2rem;
+  background-image: url("svg/logo-header-1.svg");
+  background-size: 12rem 2rem;
+  background-repeat: no-repeat;
+}
+#brand a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  text-indent: -9999px;
+  overflow: hidden;
+  width: 12rem;
+  height: 2rem;
+}
+#brand a::before,
+#brand a::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 12rem;
+  height: 2rem;
+  background-size: 12rem 2rem;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 0s;
+}
+#brand a::before {
+  background-image: url("svg/logo-header-2.svg");
+}
+#brand a::after {
+  background-image: url("svg/logo-header-3.svg");
+}
+
+/* Run the mouseover animation
+   ------------------------------ */
+#brand.active-brand {
+  -webkit-animation: wipeOut 0.15s 0s 1 steps(20, end) normal both;
+          animation: wipeOut 0.15s 0s 1 steps(20, end) normal both;
+}
+#brand.active-brand a::before {
+  -webkit-animation: secondState 1.5s 0.5s 1 steps(40, end) normal both;
+          animation: secondState 1.5s 0.5s 1 steps(40, end) normal both;
+  opacity: 1;
+}
+#brand.active-brand a::after {
+  -webkit-animation: thirdState 0.5s 2.25s 1 steps(40, end) normal both;
+          animation: thirdState 0.5s 2.25s 1 steps(40, end) normal both;
+  opacity: 1;
+}
+
+/* Run the mouseout animation: wipe in the default logo.
+   ------------------------------ */
+#brand.reset-brand {
+  -webkit-animation: wipeIn 0.4s 0s 1 steps(20, end) normal both;
+          animation: wipeIn 0.4s 0s 1 steps(20, end) normal both;
+}
+
+/* Keyframes
+   ------------------------------ */
+@-webkit-keyframes wipeIn {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 12rem;
+  }
+}
+@keyframes wipeIn {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 12rem;
+  }
+}
+@-webkit-keyframes wipeOut {
+  0% {
+    width: 12rem;
+  }
+  100% {
+    width: 0;
+  }
+}
+@keyframes wipeOut {
+  0% {
+    width: 12rem;
+  }
+  100% {
+    width: 0;
+  }
+}
+@-webkit-keyframes secondState {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 12rem;
+  }
+  90% {
+    width: 12rem;
+  }
+  100% {
+    width: 0;
+  }
+}
+@keyframes secondState {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 12rem;
+  }
+  90% {
+    width: 12rem;
+  }
+  100% {
+    width: 0;
+  }
+}
+@-webkit-keyframes thirdState {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 12rem;
+  }
+}
+@keyframes thirdState {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 12rem;
+  }
+}
