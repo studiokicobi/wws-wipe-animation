@@ -125,30 +125,35 @@ $logo-height: 2rem;
   }
 }
 
-/* Run the mouseover animation
+/* Run the mouseover animation. 
+   Check for body.touch.
    ------------------------------ */
 
-// First logo states wipes out
-#brand.active-brand {
-  animation: wipeOut 0.1s 0.2s 1 steps(20, end) normal both;
+body:not(.touch) {
+  // First logo states wipes out
+  #brand.active-brand {
+    animation: wipeOut 0.1s 0.2s 1 steps(20, end) normal both;
 
-  // Wipe in logo state 2
-  a::before {
-    animation: secondState 1.5s 0.2s 1 steps(40, end) normal both;
-    opacity: 1;
-  }
+    // Wipe in logo state 2
+    a::before {
+      animation: secondState 1.5s 0.2s 1 steps(40, end) normal both;
+      opacity: 1;
+    }
 
-  // Wipe in logo state 3
-  a::after {
-    animation: thirdState 0.5s 1.75s 1 steps(40, end) normal both;
-    opacity: 1;
+    // Wipe in logo state 3
+    a::after {
+      animation: thirdState 0.5s 1.75s 1 steps(40, end) normal both;
+      opacity: 1;
+    }
   }
 }
 
 /* Run the mouseout animation: wipe in the default logo.
    ------------------------------ */
-#brand.reset-brand {
-  animation: wipeIn 0.4s 0s 1 steps(20, end) normal both;
+body:not(.touch) {
+  #brand.reset-brand {
+    animation: wipeIn 0.4s 0s 1 steps(20, end) normal both;
+  }
 }
 
 /* Keyframes

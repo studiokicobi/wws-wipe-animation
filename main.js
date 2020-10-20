@@ -1,4 +1,6 @@
-// Add class function
+
+/* Add class function 
+   ------------------------------ */
 function addClass(o, c) {
   var re = new RegExp("(^|\\s)" + c + "(\\s|$)", "g");
   if (re.test(o.className)) return;
@@ -7,7 +9,8 @@ function addClass(o, c) {
     .replace(/(^ | $)/g, "");
 }
 
-// Remove class function
+/* Remove class function 
+   ------------------------------ */
 function removeClass(o, c) {
   var re = new RegExp("(^|\\s)" + c + "(\\s|$)", "g");
   o.className = o.className
@@ -16,7 +19,8 @@ function removeClass(o, c) {
     .replace(/(^ | $)/g, "");
 }
 
-// Add classes to the logo
+/* Add classes to the logo 
+   ------------------------------ */
 var item = document.getElementById("brand");
 item.addEventListener("mouseover", active, false);
 item.addEventListener("mouseout", reset, false);
@@ -31,3 +35,16 @@ function reset() {
   addClass(this, "reset-brand");
 }
 
+/* Test for touch 
+   ------------------------------ */
+window.addEventListener(
+  "touchstart",
+  function onFirstTouch() {
+    // Add a body class on touch
+    document.body.classList.add("touch");
+
+    // Stop listening after first touch is recorded.
+    window.removeEventListener("touchstart", onFirstTouch, false);
+  },
+  false
+);

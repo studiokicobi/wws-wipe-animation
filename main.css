@@ -107,18 +107,19 @@ li {
   background-image: url("svg/logo-header-3.svg");
 }
 
-/* Run the mouseover animation
+/* Run the mouseover animation. 
+   Check for body.touch.
    ------------------------------ */
-#brand.active-brand {
+body:not(.touch) #brand.active-brand {
   -webkit-animation: wipeOut 0.1s 0.2s 1 steps(20, end) normal both;
           animation: wipeOut 0.1s 0.2s 1 steps(20, end) normal both;
 }
-#brand.active-brand a::before {
+body:not(.touch) #brand.active-brand a::before {
   -webkit-animation: secondState 1.5s 0.2s 1 steps(40, end) normal both;
           animation: secondState 1.5s 0.2s 1 steps(40, end) normal both;
   opacity: 1;
 }
-#brand.active-brand a::after {
+body:not(.touch) #brand.active-brand a::after {
   -webkit-animation: thirdState 0.5s 1.75s 1 steps(40, end) normal both;
           animation: thirdState 0.5s 1.75s 1 steps(40, end) normal both;
   opacity: 1;
@@ -126,7 +127,7 @@ li {
 
 /* Run the mouseout animation: wipe in the default logo.
    ------------------------------ */
-#brand.reset-brand {
+body:not(.touch) #brand.reset-brand {
   -webkit-animation: wipeIn 0.4s 0s 1 steps(20, end) normal both;
           animation: wipeIn 0.4s 0s 1 steps(20, end) normal both;
 }
